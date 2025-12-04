@@ -1,3 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+  }
+  
+  body {
+    @apply font-cairo bg-stone-50 text-stone-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-amiri font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-xl transition-colors font-medium;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-primary-dark relative 
+      after:content-[''] after:absolute after:w-20 after:h-1 after:bg-accent 
+      after:bottom-0 after:right-0 pb-2;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300;
+  }
+}
+
+/* Slick Carousel Customization */
+.slick-prev:before, .slick-next:before {
+  color: #815b2d !important;
+}
